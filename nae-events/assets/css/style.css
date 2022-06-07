@@ -105,3 +105,23 @@ li {
 .eventDate {
     font-size: 15px;
 }
+
+.user {
+    background-color: lightgray;   
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.loginForm {
+    /* background-color: red; */
+    font-size: 17px;
+}
+
+.loginForm input {
+    height: 25px;
+}
