@@ -20,6 +20,8 @@ var populateEvents = function(json) {
             '<div class="eventName">'+ eventName +
             '</div><div class="eventLocation">'+ eventLocation +'</div>' +
             '<div class="eventDate">' + eventDate + '</div>'
+            // save icon that should appear at the end 
+            "<i class='fa-solid fa-floppy-disk'></i>"
             '</a></li>'
         }
     }

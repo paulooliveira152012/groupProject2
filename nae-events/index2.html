@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <script src="https://kit.fontawesome.com/1cd92f7aef.js" crossorigin="anonymous"></script>
+    <title>North Eastern Events</title>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="columns small-3" id="title">
+                <h1>North</h1> 
+                <h1>Eastern</h1>
+                <h1>Events</h1> 
+            </div>
+            
+            <div class="columns small-9">
+                <form>
+                    <label for="state" class="">Choose a State: </label>
+                    <select id="states" name="states" class="hollow button secondary expanded">
+                        <option value="CT">Connecticut</option>
+                        <option value="ME">Maine</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="NH">New Hampshire</option>
+                        <option default selected value="NY">New York</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="VT">Vermont</option>
+                    </select>
+                    <button type="submit" id="enter" class="expanded secondary button">Enter</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="row">
+            <div class="column small-3" id="side-bar">
+                
+                 <!-- Once save envent is clicked user will be redirected to home.html -->
+        <button type="submit" id="enter" class="expanded secondary button">Save Event</button>
+        <button type="submit" id="enter" class="expanded secondary button">Log out</button>
+    
+                <p>Looking for somewhere to head out to tonight? How about a show or a movie? Located in the North Eastern United States? If you answered yes to those questions, then you've arrived at the right place. Click on the dropdown menu to get started on your journey.</p>
+            </div>
+
+            <div class="column small-9 flex-container flex-dir-column" id="list">
+                <h1>Events in</h1>
+                <ul>
+                </ul>
+            </div>
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>
