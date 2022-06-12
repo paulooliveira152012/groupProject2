@@ -13,7 +13,15 @@ Post.init(
         primaryKey: true,
         autoIncrement: true
       },
-      title: {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      address: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      date_of_event: {
         type: DataTypes.STRING,
         allowNull: false
       },
