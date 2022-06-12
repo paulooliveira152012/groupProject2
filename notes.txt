@@ -56,3 +56,4 @@ Describe your application
     I WANT TO log into my account (authentication) to search for and save events in a website that allows me to find events happening in the North Eastern United States
     SO THAT I can save events (database), add more events or delete 
     When the page loads the events are loaded.
+.
