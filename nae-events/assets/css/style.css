@@ -125,3 +125,9 @@ li {
 .loginForm input {
     height: 25px;
 }
+
+button {
+    align-items: center;
+    font-size: 40px;
+    
+}

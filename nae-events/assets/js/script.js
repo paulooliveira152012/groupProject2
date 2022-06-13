@@ -57,3 +57,6 @@ loadLocalStorage();
 
 // Handles form submission 
 formEl.addEventListener('submit', handleFormSubmit)
+
+// Accordian menu for header
+// var elem = new Foundation.AccordionMenu(element, options);
