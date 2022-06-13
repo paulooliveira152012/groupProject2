@@ -117,11 +117,10 @@ li {
     cursor: pointer;
 }
 
-.loginForm {
-    /* background-color: red; */
+.loginForm, .signUpForm{
     font-size: 17px;
 }
 
-.loginForm input {
+.loginForm input, .signUpForm input{
     height: 25px;
 }

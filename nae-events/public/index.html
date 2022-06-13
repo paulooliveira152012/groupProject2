@@ -43,35 +43,34 @@
     </header>
 
     <main class="row">
-            <div class="column small-3" id="side-bar">
-                
-                    <form class="loginForm">
-                        <p>log into my account</p>
-                        <label>
-                            <input type="text" name="keyword" placeholder="User">
-                            <input type="text" name="keyword" placeholder="Password">
-                          </label>
-                        <li><button class="user">Log In</button></li>
-                        <p>No account yet? sign up now</p>
-                        <label>
-                            
-                          </label>
-                        
-                        <label>
-                            <input type="text" name="newUserId" placeholder="New User">
-                            <input type="text" name="NewUserPassword" placeholder="New Password">
-                          </label>
+        <div class="column small-3" id="side-bar">
+            
+            <form class="loginForm">
+                <p>log into my account</p>
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="password" placeholder="Password">
+                <li>
+                    <button class="user">Log In</button>
+                </li>
+            </form>
 
-                          <li><button class="user">Sign up</button></li>
-                    </form>
-                <p>Looking for somewhere to head out to tonight? How about a show or a movie? Located in the North Eastern United States? If you answered yes to those questions, then you've arrived at the right place. Click on the dropdown menu to get started on your journey.</p>
-            </div>
+            <form class="signUpForm">
+                <p>No account yet? sign up now</p>
+                <input type="text" name="newUserId" placeholder="New User">
+                <input type="text" name="newUserPassword" placeholder="New Password">
+                <li>
+                    <button class="user">Sign up</button>
+                </li>
+            </form>
+            
+            <p>Looking for somewhere to head out to tonight? How about a show or a movie? Located in the North Eastern United States? If you answered yes to those questions, then you've arrived at the right place. Click on the dropdown menu to get started on your journey.</p>
+        </div>
 
-            <div class="column small-9 flex-container flex-dir-column" id="list">
-                <h1>Events in</h1>
-                <ul>
-                </ul>
-            </div>
+        <div class="column small-9 flex-container flex-dir-column" id="list">
+            <h1>Events in</h1>
+            <ul>
+            </ul>
+        </div>
     </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

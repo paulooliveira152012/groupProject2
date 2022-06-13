@@ -4,7 +4,6 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mysql = require("mysql2");
-const { resourceLimits } = require("worker_threads");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -34,7 +33,7 @@ app.post("/login", (req, res) => {
         if(!result.length){
             res.status(500).json({ error: "Credentials do not exist" });
         } else {
-            res.sendFile(path.join(__dirname, "./public/index2.html"));
+            res.status(200).json({ sucess: true });
         }
     });
 });
@@ -59,7 +58,7 @@ app.post("/signup", (req, res) => {
                     return;
                 }
                 console.log(results);
-                res.sendFile(path.join(__dirname, "./public/index2.html"))
+                res.status(200).json({ sucess: true });
             })
         } else {
             res.status(500).json({ error: "Credentials taken"})
