@@ -44,6 +44,8 @@ router.get('/:id', (req, res) => {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
+        req.session.loggedIn = true;
+        req.session.userId = dbUserData.dataValues.id
         res.status(200).json({ success: true });
       })
       .catch(err => {
@@ -54,7 +56,6 @@ router.get('/:id', (req, res) => {
 
 // POST /api/users
 router.post('/', (req, res) => {
-  console.log('hi')
     // expects {username: 'Lernantino', password: 'password1234'}
     User.create({
       username: req.body.username,

@@ -3,8 +3,7 @@ var formEl = document.querySelector('form');
 var selectOption = document.querySelector('select');
 var listEl = document.querySelector('ul');
 var stateHeader = document.querySelector('#list h1');
-var loginFormEl = document.querySelector(".loginForm");
-var signUpFormEl = document.querySelector(".signUpForm");
+
 
 // Load Events from API to page and set header text to correct state
 var populateEvents = function(json) {
@@ -18,13 +17,39 @@ var populateEvents = function(json) {
             var eventLocation = json._embedded.events[index]._embedded.venues[0].address.line1;
             var eventDate = json._embedded.events[index].dates.start.localDate;
             var buyLink = json._embedded.events[index].url
-            listEl.innerHTML += '<li><a class="buyLink" target="blank" href='+ buyLink + '>' +
+            listEl.innerHTML += '<li class="event"><a class="buyLink" target="blank" href='+ buyLink + '>' +
             '<div class="eventName">'+ eventName +
             '</div><div class="eventLocation">'+ eventLocation +'</div>' +
-            '<div class="eventDate">' + eventDate + '</div>'+
-            '</a></li>' 
+            '<div class="eventDate">' + eventDate + '</div>' +
+            '</a>' +
+            '<div class="saveBtn">SAVE</div>' + '</li>'
         }
     }
+
+    var eventEls = document.querySelectorAll(".event");
+    eventEls.forEach((eventEl, index)=> {
+        eventEl.addEventListener("click", e => {
+            var eventName = json._embedded.events[index].name
+            var eventLocation = json._embedded.events[index]._embedded.venues[0].address.line1;
+            var eventDate = json._embedded.events[index].dates.start.localDate;
+            var buyLink = json._embedded.events[index].url
+
+            saveEvent(eventName, eventLocation, eventDate, buyLink);
+        });
+    })
+}
+
+var saveEvent = function(name, address, date_of_event , post_url) {
+    $.ajax({
+        type: "POST",
+        url: "/api/posts",
+        data: {
+            name: name,
+            address: address,
+            date_of_event: date_of_event,
+            post_url: post_url
+        }
+    });
 }
 
 // Handle form submit that calls API with selected state code
@@ -57,40 +82,6 @@ var loadLocalStorage = function() {
 // Loads local storage
 loadLocalStorage();
 
-var loginFormHandler = function(event){
-    event.preventDefault();
-
-    console.log(document.querySelector('[name="username"]').value, document.querySelector('[name="password"]').value);
-    $.ajax({
-        type: "POST",
-        url: "/api/users/login",
-        data: {
-            username: document.querySelector('[name="username"]').value,
-            password: document.querySelector('[name="password"]').value
-        },
-        success: function() {
-            window.location = '/index2.html'
-        }
-    });
-}
-
-var signUpFormHandler = function (event){
-    event.preventDefault();
-    console.log('hi')
-    $.ajax({
-        type: "POST",
-        url: "/api/users",
-        data: {
-            username: document.querySelector('[name="newUserId"]').value,
-            password: document.querySelector('[name="newUserPassword"]').value
-        },
-        success: function() {
-            window.location = '/index2.html'
-        }
-    });
-}
-
 // Handles form submission 
 formEl.addEventListener('submit', handleFormSubmit)
-loginFormEl.addEventListener("submit", loginFormHandler)
-signUpFormEl.addEventListener("submit", signUpFormHandler)
+

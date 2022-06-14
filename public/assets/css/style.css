@@ -124,3 +124,22 @@ li {
 .loginForm input, .signUpForm input{
     height: 25px;
 }
+
+li {
+    position: relative;
+}
+
+.saveBtn {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border: solid 10px white;
+    background-color: white;
+}
+
+.saveBtn:hover {
+    cursor: pointer;
+    background-color: #FCB795;
+    border: solid 10px #FCB795;
+}
+
