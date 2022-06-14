@@ -65,7 +65,7 @@ var loginFormHandler = function(event){
     console.log(document.querySelector('[name="username"]').value, document.querySelector('[name="password"]').value);
     $.ajax({
         type: "POST",
-        url: "/login",
+        url: "/api/users/login",
         data: {
             username: document.querySelector('[name="username"]').value,
             password: document.querySelector('[name="password"]').value
@@ -81,7 +81,7 @@ var signUpFormHandler = function (event){
     console.log('hi')
     $.ajax({
         type: "POST",
-        url: "/signup",
+        url: "/api/users",
         data: {
             username: document.querySelector('[name="newUserId"]').value,
             password: document.querySelector('[name="newUserPassword"]').value
