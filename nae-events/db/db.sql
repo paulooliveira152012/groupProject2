@@ -1,3 +1,6 @@
-DROP DATABASE IF EXISTS election;
-CREATE DATABASE election;
-USE election;
+DROP DATABASE IF EXISTS nae_events_db;
+
+CREATE DATABASE nae_events_db;
+
+
+
