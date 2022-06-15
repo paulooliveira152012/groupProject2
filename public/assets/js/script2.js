@@ -3,6 +3,9 @@ var formEl = document.querySelector('form');
 var selectOption = document.querySelector('select');
 var listEl = document.querySelector('ul');
 var stateHeader = document.querySelector('#list h1');
+var logOutEl = document.querySelector("#logOut")
+var savePageEl = document.querySelector('#savedEvents')
+
 
 // Load Events from API to page and set header text to correct state
 var populateEvents = function(json) {
@@ -16,13 +19,52 @@ var populateEvents = function(json) {
             var eventLocation = json._embedded.events[index]._embedded.venues[0].address.line1;
             var eventDate = json._embedded.events[index].dates.start.localDate;
             var buyLink = json._embedded.events[index].url
-            listEl.innerHTML += '<li><a class="buyLink" target="blank" href='+ buyLink + '>' +
+            listEl.innerHTML += '<li class="event"><a class="buyLink" target="blank" href='+ buyLink + '>' +
             '<div class="eventName">'+ eventName +
             '</div><div class="eventLocation">'+ eventLocation +'</div>' +
-            '<div class="eventDate">' + eventDate + '</div>'
-            '</a></li>'
+            '<div class="eventDate">' + eventDate + '</div>' +
+            '</a>' +
+            '<div class="saveBtn">SAVE</div>' + '</li>'
         }
     }
+
+    var eventEls = document.querySelectorAll(".event");
+    eventEls.forEach((eventEl, index)=> {
+        eventEl.addEventListener("click", e => {
+            var eventName = json._embedded.events[index].name
+            var eventLocation = json._embedded.events[index]._embedded.venues[0].address.line1;
+            var eventDate = json._embedded.events[index].dates.start.localDate;
+            var buyLink = json._embedded.events[index].url
+
+            saveEvent(eventName, eventLocation, eventDate, buyLink);
+        });
+    })
+}
+
+var saveEvent = function(name, address, date_of_event , post_url) {
+    $.ajax({
+        type: "POST",
+        url: "/api/posts",
+        data: {
+            name: name,
+            address: address,
+            date_of_event: date_of_event,
+            post_url: post_url
+        }
+    });
+}
+var savedEvents = function() {
+    window.location = '/home.html'
+};
+
+var logOut = function() {
+    $.ajax({
+        type: "GET",
+        url: "/api/users/logout",
+        success: function() {
+            window.location = '/index.html'
+        }
+    });
 }
 
 // Handle form submit that calls API with selected state code
@@ -57,3 +99,5 @@ loadLocalStorage();
 
 // Handles form submission 
 formEl.addEventListener('submit', handleFormSubmit)
+logOutEl.addEventListener("click", logOut);
+savePageEl.addEventListener("click", savedEvents);

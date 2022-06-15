@@ -1,0 +1,12 @@
+const Sequelize = require('sequelize');
+
+require('dotenv').config();
+
+// create connection to our db
+const sequelize = new Sequelize("nae_events_db", "root", "Willie28!", {
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
+  port: 3306
+});
+
+module.exports = sequelize;
