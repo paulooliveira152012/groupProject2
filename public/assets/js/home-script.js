@@ -8,7 +8,7 @@ var populateSavedEvents = function() {
         type: "GET",
         url: "/api/posts",
         success: function(response) { 
-            welcomeEl.innerHTML += `<p> Welcome ${response[0].user.username} </p>`
+            welcomeEl.innerHTML += `<p> Welcome ${response[0].user.username}!</p>`
             for (let index = 0; index < response.length; index++) {
                     var eventName = response[index].name
                     var eventLocation = response[index].address;
