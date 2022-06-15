@@ -74,10 +74,14 @@ header .toggle {
 
 .menu {
     width: 70%;
+    margin-left: -100%;
+    margin-top: 0;
+    position: absolute;
 }
 
 .sideMenu {
     width: 100%;
+    background-color: black;
     
 }
 
@@ -204,4 +208,9 @@ li {
 
 .mainContainer {
     display: flex;
+}
+
+.secondContainer {
+    
+    
 }
