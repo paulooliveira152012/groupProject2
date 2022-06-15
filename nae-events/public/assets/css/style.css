@@ -72,10 +72,12 @@ header .toggle {
 /* End of burger menu */
 
 
-
+.menu {
+    width: 70%;
+}
 
 .sideMenu {
-    width: 25%;
+    width: 100%;
     
 }
 
@@ -198,4 +200,8 @@ li {
 
 .loginForm input, .signUpForm input{
     height: 25px;
+}
+
+.mainContainer {
+    display: flex;
 }
