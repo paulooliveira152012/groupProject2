@@ -96,3 +96,60 @@ var signUpFormHandler = function (event){
 formEl.addEventListener('submit', handleFormSubmit)
 loginFormEl.addEventListener("submit", loginFormHandler)
 signUpFormEl.addEventListener("submit", signUpFormHandler)
+
+
+
+// -----------------------------------------------------------------------------
+
+// Paulo's additinionvar toggle = document.querySelector("#toggle")
+var bar1 = document.querySelector("#bar1")
+var bar2 = document.querySelector("#bar2")
+var bar3 = document.querySelector("#bar3")
+var menu = document.querySelector("#menu")
+
+
+toggle.addEventListener("click", hideB3)
+toggle.addEventListener("click", rotateB1)
+toggle.addEventListener("click", rotateB2)
+toggle.addEventListener("click", displayMenu)
+
+
+
+function rotateB1() {
+    if (bar1.classList != ("rotateB1")) {
+        bar1.classList=("rotateB1")
+    } else {
+        bar1.classList = ("rotateB1back")
+    }
+}
+
+function rotateB2() {
+    if (bar2.classList != ("rotateB2")){
+        bar2.classList=("rotateB2")
+    } else {
+        bar2.classList = ("rotateB2back")
+    }
+}
+
+function hideB3() {
+    if (bar3.classList != ("hideB3")){
+        bar3.classList=("hideB3")   
+    } else {
+        bar3.classList = ("")
+    }
+}
+
+//create function to bring menu when clicking the toggle
+function displayMenu() {
+    console.log(menu.style.marginLeft)
+    if (menu.style.marginLeft !== "0px") {
+        menu.style.marginLeft = "0px"
+        menu.style.transition = "margin-left .3s"
+        console.log("true block")
+    } else {
+        menu.style.marginLeft = "-100%" 
+        console.log("false block")
+    }
+}
+
+

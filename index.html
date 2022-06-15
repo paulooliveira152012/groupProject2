@@ -10,61 +10,78 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./nae-events/public/assets/css/style.css"/>
     <title>North Eastern Events</title>
 </head>
+
+<style>
+</style>
+
+
 <body>
     <header>
-        <div class="row">
-            <div class="columns small-3" id="title">
-                <h1>North</h1> 
-                <h1>Eastern</h1>
-                <h1>Events</h1> 
-            </div>
-            
-            <div class="columns small-9">
-                <form>
-                    <label for="state" class="">Choose a State: </label>
-                    <select id="states" name="states" class="hollow button secondary expanded">
-                        <option value="CT">Connecticut</option>
-                        <option value="ME">Maine</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="NH">New Hampshire</option>
-                        <option default selected value="NY">New York</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="VT">Vermont</option>
-                    </select>
-                    <button type="submit" id="enter" class="expanded secondary button">Enter</button>
-                </form>
+        <div class="toggle" id="toggle">
+            <div id="bar1"></div>
+            <div id="bar2"></div>
+            <div id="bar3"></div>
+        </div>
+
+        <div class="row headerTitle">
+            <div class="columns" id="title">
+                 <h1>North Eastern Events</h1>
             </div>
         </div>
     </header>
 
-    <main class="row">
-        <div class="column small-3" id="side-bar">
-            
-            <form class="loginForm">
-                <p>log into my account</p>
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="password" placeholder="Password">
-                <li>
-                    <button class="user">Log In</button>
-                </li>
-            </form>
+  
 
-            <form class="signUpForm">
-                <p>No account yet? sign up now</p>
-                <input type="text" name="newUserId" placeholder="New User">
-                <input type="text" name="newUserPassword" placeholder="New Password">
-                <li>
-                    <button class="user">Sign up</button>
-                </li>
-            </form>
+    <div class="searchSection">
+        <form>
+            <label for="state" class="">Choose a State: </label>
+            <select id="states" name="states" class="hollow button secondary expanded">
+                <option value="CT">Connecticut</option>
+                <option value="ME">Maine</option>
+                <option value="MA">Massachusetts</option>
+                <option value="NH">New Hampshire</option>
+                <option default selected value="NY">New York</option>
+                <option value="NJ">New Jersey</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="VT">Vermont</option>
+            </select>
+            <button type="submit" id="enter" class="expanded secondary button">Enter</button>
+        </form>
+    </div>       
+     
+    <div class="menu" id="menu">
+        <div class="sideMenu">
+            <div class="column small-3" id="side-bar">
             
-            <p>Looking for somewhere to head out to tonight? How about a show or a movie? Located in the North Eastern United States? If you answered yes to those questions, then you've arrived at the right place. Click on the dropdown menu to get started on your journey.</p>
+                <form class="loginForm">
+                    <p>log into my account</p>
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="password" placeholder="Password">
+                    <li>
+                        <button class="user">Log In</button>
+                    </li>
+                </form>
+    
+                <form class="signUpForm">
+                    <p>No account yet? sign up now</p>
+                    <input type="text" name="newUserId" placeholder="New User">
+                    <input type="text" name="newUserPassword" placeholder="New Password">
+                    <li>
+                        <button class="user">Sign up</button>
+                    </li>
+                </form>
+                
+                <p>Looking for somewhere to head out to tonight? How about a show or a movie? Located in the North Eastern United States? If you answered yes to those questions, then you've arrived at the right place. Click on the dropdown menu to get started on your journey.</p>
+            </div>
         </div>
+    </div>
+
+    <main class="row">
+
 
         <div class="column small-9 flex-container flex-dir-column" id="list">
             <h1>Events in</h1>
@@ -77,6 +94,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
-<script src="./assets/js/script.js"></script>
+<script src="./nae-events/public/assets/js/script.js"></script>
 </body>
 </html>

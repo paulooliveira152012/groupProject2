@@ -6,25 +6,94 @@ html, body {
 }
 
 header {
-    margin-top: 20px;
+    background-color: black;
+    /* height: 100px; */
+    display: flex;
 }
 
+header .toggle {
+    width: 35px;
+    height: 25px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
 
-
-
-
-#title, #side-bar {
-    background-color: black;
+.headerTitle {
+    width: 70%;
+    margin: 0;
     color: white;
-    padding: 0px;
-    border: solid 3px white;
-    padding: 3px;
+}
+
+#bar1, #bar2, #bar3 {
+    width: 100%;
+    height: 4px;
+    background-color: grey;
+}
+
+/* Start burger menu functionality styles */
+
+.rotateB1 {
+    transform: rotate(225deg);
+    margin-top: 10px;
+    position: absolute;
+    transition: .5s;
+}
+
+.rotateB1back {
+    transform: rotate(-180deg);
+    transition: .5s;
+}
+
+.rotateB2 {
+    transform: rotate(-225deg);
+    margin-top: 10px;
+    position: absolute;
+    transition: .5s;
+}
+
+.rotateB2back {
+    transform: rotate(180deg);
+    transition: .5s;
+}
+
+.hideB3 {
+    display: none;
+}
+
+.showMenu {
+    margin-left: 100%;
+}
+/* End of burger menu */
+
+
+
+
+.sideMenu {
+    width: 25%;
+    
 }
 
 #side-bar {
     background-image: url("../images/background.jpeg");
     padding: 20px;
+    width: 100%;
 }
+
+#title, #side-bar {
+    background-color: black;
+    color: white;
+    padding: 0px;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+
 
 #title h1 {
     font-size: 30px;
@@ -57,6 +126,8 @@ form {
 main {
     display: flex;
     min-height: 100%;
+    
+    
 }
 
 .list{
