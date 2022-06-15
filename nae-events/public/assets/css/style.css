@@ -80,15 +80,20 @@ header .toggle {
 }
 
 .sideMenu {
-    width: 100%;
+    width: 70%;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
     
 }
 
 #side-bar {
-    background-image: url("../images/background.jpeg");
+    /* background-image: url("../images/background.jpeg"); */
+    background-color: black;
     padding: 20px;
     width: 100%;
+    
+    
 }
 
 #title, #side-bar {
@@ -211,6 +216,5 @@ li {
 }
 
 .secondContainer {
-    
-    
+    padding: 50px;
 }
