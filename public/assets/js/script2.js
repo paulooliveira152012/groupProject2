@@ -3,6 +3,8 @@ var formEl = document.querySelector('form');
 var selectOption = document.querySelector('select');
 var listEl = document.querySelector('ul');
 var stateHeader = document.querySelector('#list h1');
+var logOutEl = document.querySelector("#logOut")
+var savePageEl = document.querySelector('#savedEvents')
 
 
 // Load Events from API to page and set header text to correct state
@@ -51,6 +53,19 @@ var saveEvent = function(name, address, date_of_event , post_url) {
         }
     });
 }
+var savedEvents = function() {
+    window.location = '/home.html'
+};
+
+var logOut = function() {
+    $.ajax({
+        type: "GET",
+        url: "/api/users/logout",
+        success: function() {
+            window.location = '/index.html'
+        }
+    });
+}
 
 // Handle form submit that calls API with selected state code
 var handleFormSubmit = function(event) {
@@ -84,4 +99,5 @@ loadLocalStorage();
 
 // Handles form submission 
 formEl.addEventListener('submit', handleFormSubmit)
-
+logOutEl.addEventListener("click", logOut);
+savePageEl.addEventListener("click", savedEvents);

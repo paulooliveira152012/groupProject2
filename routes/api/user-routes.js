@@ -10,7 +10,13 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
+
+router.get('/logout', (req, res) => {
+    req.session.loggedIn = false;
+    req.session.userId = false;
+    res.status(200).json({ success: true });
+})
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
@@ -61,7 +67,12 @@ router.post('/', (req, res) => {
       username: req.body.username,
       password: req.body.password
     })
-      .then(() => res.status(200).json({ sucess: true }))
+      .then(dbUserData => {
+        console.log(dbUserData.dataValues.id);
+        req.session.loggedIn = true;
+        req.session.userId = dbUserData.dataValues.id;
+        res.status(200).json({ sucess: true });
+      })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
