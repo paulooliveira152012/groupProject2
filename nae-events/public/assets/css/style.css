@@ -7,7 +7,6 @@ html, body {
 
 header {
     background-color: black;
-    /* height: 100px; */
     display: flex;
 }
 
@@ -227,4 +226,30 @@ li {
 .secondContainer {
     padding: 50px;
 }
+
+footer {
+    background-color: black;
+    height: 350px;
+    bottom: 0;
+    position: relative;
+    color: white;
+    padding: 20px;
+}
+
+footer h2 {
+    padding-bottom: 50px;
+    
+}
+
+footer .content {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .content li {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
 
