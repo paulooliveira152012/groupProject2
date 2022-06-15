@@ -87,9 +87,18 @@ header .toggle {
     
 }
 
-#side-bar {
+.hero {
+    height: 300px;
+    width: 100%;
+    /* margin-bottom: 25px; */
     background-image: url("../images/background.jpeg");
-    
+    background-size:cover;
+    background-position: bottom;
+  }
+
+#side-bar {
+    /* background-image: url("../images/background.jpeg"); */
+    background-color: black;
     padding: 20px;
     width: 100%;
     
@@ -218,3 +227,4 @@ li {
 .secondContainer {
     padding: 50px;
 }
+
