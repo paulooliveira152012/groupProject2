@@ -88,8 +88,8 @@ header .toggle {
 }
 
 #side-bar {
-    /* background-image: url("../images/background.jpeg"); */
-    background-color: black;
+    background-image: url("../images/background.jpeg");
+    
     padding: 20px;
     width: 100%;
     
@@ -193,7 +193,7 @@ li {
 }
 
 .user {
-    background-color: lightgray;   
+    background-color: rgb(166, 126, 126);   
     padding: 10px;
     border-radius: 5px;
 }
